@@ -2,6 +2,10 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <QTableWidget>
+#include <QTimer>
+#include <QTime>
+#include <QDebug>
 
 namespace Ui {
 class MainWindow;
@@ -17,6 +21,14 @@ public:
     
 private:
     Ui::MainWindow *ui;
+    QTimer timer;
+    int cnter;
+    QString charX;
+
+    void showChar(QTableWidget* tw, int col, QString charX, quint16 mode);
+
+private slots:
+    void slotTimeout();
 };
 
 #endif // MAINWINDOW_H
